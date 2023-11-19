@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class MasterService {
 
   constructor() { }
+
+  haveAccess(){
+    return true
+  }
 }
