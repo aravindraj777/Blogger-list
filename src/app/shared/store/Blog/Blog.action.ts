@@ -1,3 +1,3 @@
 import { createAction } from "@ngrx/store";
 
-export const loadBlog = createAction('loading')
+export const loadBlog = createAction('loadblog')

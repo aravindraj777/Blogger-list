@@ -17,6 +17,7 @@ import { HomeComponent } from './component/home/home.component';
 import { CounterComponent } from './component/counter/counter.component';
 import { BlogComponent } from './component/blog/blog.component';
 import { MenuheaderComponent } from './component/menuheader/menuheader.component';
+import { AppState } from './shared/store/Global/App.state';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { MenuheaderComponent } from './component/menuheader/menuheader.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({counter:counterReducer,blog:blogReducer}),
+    StoreModule.forRoot(AppState),
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,

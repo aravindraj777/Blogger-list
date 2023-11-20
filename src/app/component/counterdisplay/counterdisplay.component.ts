@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
+import { AppStateModel } from 'src/app/shared/store/Global/AppState.Model';
 import { CounterModel } from 'src/app/shared/store/counter.model';
 import { getCounter } from 'src/app/shared/store/counter.selector';
 
@@ -12,7 +13,7 @@ import { getCounter } from 'src/app/shared/store/counter.selector';
 })
 export class CounterdisplayComponent implements OnInit,OnDestroy{
 
-  constructor(private store:Store<{counter:CounterModel}>){}
+  constructor(private store:Store<AppStateModel>){}
 
  
 
