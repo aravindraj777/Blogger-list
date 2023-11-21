@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "learnngrx:build:production"
+              "buildTarget": "learnngrx:build:production"
             },
             "development": {
-              "browserTarget": "learnngrx:build:development"
+              "buildTarget": "learnngrx:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "learnngrx:build"
+            "buildTarget": "learnngrx:build"
           }
         },
         "test": {
