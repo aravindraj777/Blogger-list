@@ -8,6 +8,7 @@
         <h1>{{item.title}}</h1>
         <div style="text-align: right;width: 100%;">
             <button  (click)="editBlog(item.id)" mat-raised-button color="primary" >Edit</button>
+            <button  (click)="removeBlog(item.id)" mat-raised-button color="warn" >Delete</button>
         </div>
     </mat-card-header>
     <mat-card-content>

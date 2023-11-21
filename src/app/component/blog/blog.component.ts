@@ -6,6 +6,7 @@ import { getBlog } from 'src/app/shared/store/Blog/Blog.selectors';
 import { AppStateModel } from 'src/app/shared/store/Global/AppState.Model';
 import { AddblogComponent } from '../addblog/addblog.component';
 import { connect } from 'rxjs';
+import { deleteBlog } from 'src/app/shared/store/Blog/Blog.action';
 
 @Component({
   selector: 'app-blog',
@@ -44,6 +45,12 @@ export class BlogComponent implements OnInit{
 
   editBlog(id:any){
     this.openPopUp(id,'Edit Blog',true);
+  }
+
+  removeBlog(id:any){
+    if(confirm('Are you sure want to remove')){
+      this.store.dispatch(deleteBlog({id:id}))
+    }
   }
 
 }
