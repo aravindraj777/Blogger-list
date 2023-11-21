@@ -5,6 +5,7 @@ import { BlogModel } from 'src/app/shared/store/Blog/Blog.model';
 import { getBlog } from 'src/app/shared/store/Blog/Blog.selectors';
 import { AppStateModel } from 'src/app/shared/store/Global/AppState.Model';
 import { AddblogComponent } from '../addblog/addblog.component';
+import { connect } from 'rxjs';
 
 @Component({
   selector: 'app-blog',
@@ -13,7 +14,9 @@ import { AddblogComponent } from '../addblog/addblog.component';
 })
 export class BlogComponent implements OnInit{
  
-  constructor(private store:Store<AppStateModel>,private dialog:MatDialog){}
+  constructor(private store:Store<AppStateModel>,private dialog:MatDialog){
+    console.log("constructor")
+  }
 
 
   blogList!:BlogModel[]
@@ -25,13 +28,22 @@ export class BlogComponent implements OnInit{
   }
 
   addBlog(){
-    this.openPopUp();
+    this.openPopUp(0,'Add Blog');
   }
 
-  openPopUp(){
+  openPopUp(id:any,title:any,isEdit=false){
     this.dialog.open(AddblogComponent,{
-      width:'40%'
+      width:'40%',
+      data:{
+        id:id,
+        title:title,
+        isEdit:isEdit
+      }
     })
+  }
+
+  editBlog(id:any){
+    this.openPopUp(id,'Edit Blog',true);
   }
 
 }
