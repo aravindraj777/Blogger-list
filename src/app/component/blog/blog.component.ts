@@ -6,6 +6,7 @@ import { getBlog } from 'src/app/shared/store/Blog/Blog.selectors';
 import { AppStateModel } from 'src/app/shared/store/Global/AppState.Model';
 import { AddblogComponent } from '../addblog/addblog.component';
 import { connect } from 'rxjs';
+import { loadBlog } from 'src/app/shared/store/Blog/Blog.action';
 
 @Component({
   selector: 'app-blog',
@@ -21,6 +22,8 @@ export class BlogComponent implements OnInit{
 
   blogList!:BlogModel[]
   ngOnInit(): void {
+    this.store.dispatch(loadBlog())
+
    this.store.select(getBlog).subscribe(item=>{
     this.blogList = item;
     console.log(this.blogList)
