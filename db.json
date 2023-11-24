@@ -13,12 +13,7 @@
     {
       "id": 3,
       "title": "Java",
-      "description": "Java Tech"
-    },
-    {
-      "id": 4,
-      "title": ".net",
-      "description": ".Net core"
+      "description": "J2EE version"
     }
   ]
 }
